@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Transcoding Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: rgb(85, 85, 85);
+            /* background:  #f4f6f8; */
+        }
+        .animated-text {
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+        
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .colora {
+            background:  #f4f6f8;
+        }
+        .colorb{
+            background-color: rgb(255, 255, 255);
+        }
+        .colorc {
+            background-color: #f4f6f8
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 17vh;
+            background: #f4f6f8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 300ms ease;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+            text-underline-offset: 1rem;
+            text-decoration-color: rgb(181, 181, 181);
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .main1 {
+            background:  #f4f6f8;
+        }
+
+        .space-large {
+            height: 64px;
+        }
+
+        .blog-post {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            background: #f4f6f8;
+            justify-content: center;
+        }
+
+        .blog-post.a {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            /* background: #f4f6f8; */
+            justify-content: center;
+        }
+
+        .color {
+            background: #f4f6f8;  
+            max-width: 900px;
+        }
+
+        .project-img {
+            width: 100%;
+            margin-top: 80px;
+            border-radius: 1rem;
+            /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); */
+            background-color: white;
+        }
+        .project-imgs {
+            margin-top: 60px;
+            margin-bottom: 60px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+        .blog-post h2 {
+            background:  #f4f6f8;
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post h3 {
+            font-size: 24px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .color1 {
+            background-color: white;
+        }
+
+        .blog-post h4 {
+            font-size: 18px;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post p {
+            margin-bottom: 1rem;
+        }
+
+        .blog-post ul, .blog-post ol {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #f1f1f1;
+    color: #100f0f;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.navcontainer {
+    /* max-width: 1200px; */
+    background-color: #f1f1f1;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 600px;
+}
+
+.hello {
+    font-size: 14px;
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+
+    </style>
+</head>
+<body >
+    
+    <header>
+        <nav>
+            <a href="#" class="logo animated-text" onclick="location.href='index.html'">Video Transcoding Platform</a>
+            <ul class="nav-links">
+                <li><a href="#" class="animated-text">Home</a></li>
+                <li><a href="#" class="animated-text">About</a></li>
+                <li><a href="#" class="animated-text">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="colora">
+     <main class="main1">
+        <div>
+            <article class="blog-post">
+                <div class="color">
+                    
+                    <h2 >Video Transcoding Platform Architecture</h2>
+                    <img src="./assets/video.jpg" alt="Project 1" class="project-imgs" />
+
+                    <h3>Overview</h3>
+                    <p>This document outlines the architecture of our scalable, serverless video transcoding platform built on AWS. The system efficiently handles video uploads, transcoding, and delivery while maintaining high availability and security.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+     </div>
+     <div class="colord">
+        <main class="main1">
+           <div>
+               <article class="blog-post a">
+                <div class="space-large"></div>
+
+                <h3>Architecture Diagram</h3>
+                <img src="./assets/map.png" alt="Project 1" class="project-img" />
+                <p><em>Caption: High-level architecture of the video transcoding platform</em></p>
+                <div class="space-large"></div>
+                <div class="space-large"></div>
+               </article>
+           </div>
+       </main>
+        </div>
+     <div class="colorc">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                <!-- <div class="space-large"></div>
+
+                <h3>Architecture Diagram</h3>
+                <img src="./assets/map.png" alt="Project 1" class="project-img" />
+                <p><em>Caption: High-level architecture of the video transcoding platform</em></p>
+                <div class="space-large"></div>
+                <div class="space-large"></div> -->
+
+                <h3>Key Components</h3>
+
+                <h4>Video Upload and Metadata Storage</h4>
+                <ol>
+                    <li>Admins upload videos through an API Gateway endpoint.</li>
+                    <li>A Lambda function processes the upload:
+                        <ul>
+                            <li>Stores the video in an S3 input bucket</li>
+                            <li>Saves metadata (title, thumbnail, description) to a DynamoDB table</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4>Video Transcoding</h4>
+                <ol>
+                    <li>S3 input bucket triggers a Lambda function on new video uploads.</li>
+                    <li>This Lambda function initiates an ECS task on Fargate.</li>
+                    <li>The ECS task:
+                        <ul>
+                            <li>Uses a Docker container with transcoding software</li>
+                            <li>Mounts an EFS volume for temporary storage</li>
+                            <li>Transcodes the video into multiple resolutions</li>
+                            <li>Uploads transcoded versions to an S3 output bucket</li>
+                        </ul>
+                    </li>
+                    <li>S3 output bucket triggers another Lambda function on transcoded video uploads.</li>
+                    <li>This Lambda function updates the DynamoDB table with URLs for each resolution.</li>
+                </ol>
+
+                <img src="./assets/ecs.png" alt="Project 1" class="project-img" />
+                <p><em>Caption: Detailed view of the video transcoding workflow</em></p>
+
+                <h4>User Interaction</h4>
+                <ol>
+                    <li>Users authenticate using Amazon Cognito.</li>
+                    <li>Authenticated users browse and view videos.</li>
+                    <li>Video metadata is fetched from DynamoDB through API Gateway and Lambda.</li>
+                    <li>Users can select different video resolutions.</li>
+                    <li>User interactions are sent to Amazon Kinesis Data Streams for analysis.</li>
+                </ol>
+
+                <h3>Infrastructure Components</h3>
+                <ul>
+                    <li><strong>Networking:</strong>
+                        <ul>
+                            <li>Custom VPC with multiple subnets across Availability Zones</li>
+                        </ul>
+                    </li>
+                    <li><strong>Compute and Container Orchestration:</strong>
+                        <ul>
+                            <li>ECS with Fargate for running Docker containers</li>
+                            <li>ECS Task Definition for container specifications</li>
+                        </ul>
+                    </li>
+                    <li><strong>Storage:</strong>
+                        <ul>
+                            <li>S3 Buckets for raw and transcoded videos</li>
+                            <li>EFS for shared storage during transcoding</li>
+                            <li>DynamoDB for video metadata and URLs</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Delivery:</strong>
+                        <ul>
+                            <li>CloudFront CDN for low-latency video delivery</li>
+                            <li>Route 53 for DNS management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Load Balancing and Scaling:</strong>
+                        <ul>
+                            <li>Application Load Balancer (ALB) for traffic distribution</li>
+                            <li>Auto Scaling for Fargate tasks</li>
+                        </ul>
+                    </li>
+                    <li><strong>Security and Authentication:</strong>
+                        <ul>
+                            <li>Cognito for user authentication and authorization</li>
+                            <li>AWS WAF for web application firewall protection</li>
+                        </ul>
+                    </li>
+                    <li><strong>Deployment and CI/CD:</strong>
+                        <ul>
+                            <li>CloudFormation for infrastructure as code</li>
+                            <li>CodePipeline for CI/CD pipeline management</li>
+                            <li>GitHub for source control</li>
+                            <li>AWS CLI for deployment tasks</li>
+                        </ul>
+                    </li>
+                    <li><strong>Monitoring and Logging:</strong>
+                        <ul>
+                            <li>CloudWatch for logs and metrics collection</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </main>
+</div>
+
+<div class="colorb">
+
+    <main class="main1">
+        <div>
+            <article class="blog-post a">
+                <div class="color1">
+                    <h3>CloudFormation Implementation</h3>
+                    <p>Our infrastructure is defined and managed using AWS CloudFormation, implementing several advanced features:</p>
+
+                    <h4>Parent Stack</h4>
+                    <p>The parent stack orchestrates the deployment of all nested stacks. Here's the template for our parent stack:</p>
+                    <pre><code>AWSTemplateFormatVersion: '2010-09-09'
+Description: Main stack to include nested stacks from S3
+
+Resources:
+  Stack1:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: 'https://mainyamlbucket.s3.amazonaws.com/NetworkingStack.yaml'
+
+  Stack4:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: 'https://mainyamlbucket.s3.amazonaws.com/lambdastack.yaml'
+
+  Stack2:
+    Type: 'AWS::CloudFormation::Stack'
+    DependsOn:
+         -  Stack4
+    Properties:
+      TemplateURL: 'https://mainyamlbucket.s3.amazonaws.com/ComputeStack.yaml'
+
+  Stack3:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: 'https://mainyamlbucket.s3.amazonaws.com/Kinesis.yaml'</code></pre>
+
+                    <h4>Nested Stacks</h4>
+                    <p>We use nested stacks to manage our complex infrastructure efficiently. This approach allows us to:</p>
+                    <ul>
+                        <li>Organize related resources into separate templates</li>
+                        <li>Reuse common components across multiple stacks</li>
+                        <li>Simplify updates and maintenance of individual components</li>
+                    </ul>
+
+                    <h4>Custom Resources</h4>
+                    <p>We implement custom resources to extend CloudFormation's capabilities, allowing us to manage resources that are not natively supported by AWS CloudFormation.</p>
+
+                    <h4>StackSets</h4>
+                    <p>We use CloudFormation StackSets for multi-account and multi-region deployments. This allows us to:</p>
+                    <ul>
+                        <li>Deploy our infrastructure consistently across multiple AWS accounts and regions</li>
+                        <li>Manage updates and deletions of stacks across accounts and regions from a central location</li>
+                    </ul>
+
+                    <h4>Drift Detection</h4>
+                    <p>We regularly use CloudFormation drift detection to ensure our infrastructure remains consistent with our defined templates. This helps us:</p>
+                    <ul>
+                        <li>Identify any manual changes made outside of CloudFormation</li>
+                        <li>Maintain infrastructure consistency and compliance</li>
+                        <li>Quickly remediate any unauthorized changes</li>
+                    </ul>
+                </div>
+
+                
+            </article>
+        </div>
+    </main>
+</div>
+<div class="colora">
+    <main class="main1">
+       <div>
+           <article class="blog-post">
+               <div class="color">
+                <h3>API Endpoints</h3>
+                <ol>
+                    <li>Video Upload API</li>
+                    <li>Video Metadata Retrieval API</li>
+                    <li>User Interaction Logging API</li>
+                </ol>
+
+                <h3>Data Flow</h3>
+                <p>[Insert data flow diagram here]</p>
+                <p><em>Caption: Data flow through the video transcoding platform</em></p>
+                <ol>
+                    <li>Admin uploads video → API Gateway → Lambda → S3 + DynamoDB</li>
+                    <li>S3 Input → Lambda → ECS (Fargate) → S3 Output</li>
+                    <li>S3 Output → Lambda → DynamoDB update</li>
+                    <li>User request → API Gateway → Lambda → DynamoDB → Frontend</li>
+                    <li>User interaction → API Gateway → Kinesis Data Streams</li>
+                </ol>
+
+                <h3>Security Considerations</h3>
+                <ul>
+                    <li>Implement least privilege access for all components</li>
+                    <li>Encrypt data at rest and in transit</li>
+                    <li>Use VPC endpoints for secure communication between services</li>
+                    <li>Regular system updates and patches</li>
+                    <li>AWS WAF implementation:
+                        <ul>
+                            <li>Protects against common web exploits</li>
+                            <li>Custom rules to block malicious traffic patterns</li>
+                            <li>Integration with CloudFront and ALB for comprehensive protection</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Scalability and Performance</h3>
+                <ul>
+                    <li>Auto Scaling for ECS tasks</li>
+                    <li>CloudFront caching strategies</li>
+                    <li>Optimized DynamoDB read/write capacity</li>
+                </ul>
+
+                <h3>Monitoring and Alerting</h3>
+                <ul>
+                    <li>CloudWatch alarms for critical metrics</li>
+                    <li>Custom dashboards for system overview</li>
+                    <li>SNS notifications for important events</li>
+                </ul>
+
+                <h3>Disaster Recovery</h3>
+                <ul>
+                    <li>Cross-region S3 bucket replication</li>
+                    <li>DynamoDB global tables for multi-region availability</li>
+                    <li>Regular backups of critical data</li>
+                </ul>
+
+                <p>This architecture provides a scalable, secure, and efficient solution for our video platform, leveraging AWS services to handle complex video processing and delivery workflows. The use of advanced CloudFormation features ensures our infrastructure is well-organized, consistent, and easily manageable across multiple environments.</p>
+               </div>
+               
+           </article>
+       </div>
+   </main>
+   <footer>
+    <nav class="navcontainer">
+      <div class="nav-links-container">
+        <p class="hello animated-text">Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+        <ul class="nav-links ">
+          
+          <li><a href="#experience"><img
+            src="./assets/email.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#experience"><img
+            src="./assets/github.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><img
+            src="./assets/linkedin.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/facbook.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/x.jpg"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          
+        </ul>
+        
+      </div>
+    </nav>
+    
+  </footer>
+    </div>
+    
+</body>

@@ -1,0 +1,43 @@
+Cloud-Native E-commerce Store – AWS-Powered Infrastructure
+This project is a cloud-native e-commerce website developed to sell shoes, with a focus on applying key cloud engineering principles. It leverages the full power of AWS services to build a scalable, serverless backend while maintaining security and performance. The project was created to deepen my understanding of AWS core concepts and the cloud-native approach to infrastructure.
+
+Cloud Architecture Flow: End-to-End
+
+User Interaction with React Frontend:
+Users browse the website, built using React, to view product categories (Men, Women, Jordans, All), select products, and add them to the cart. The frontend communicates with backend APIs using API Gateway.
+API Requests to AWS:
+User actions (such as viewing products or adding to the cart) trigger API calls to AWS API Gateway, which acts as the central access point for all backend requests.
+Serverless Processing with AWS Lambda:
+AWS Lambda functions handle backend logic, processing requests such as retrieving product details, managing the shopping cart, and placing orders. Each Lambda function is event-driven, executing only when invoked by an API call.
+Data Management with DynamoDB:
+All product details, user data, and order histories are stored in Amazon DynamoDB. The database is automatically scaled based on the traffic, ensuring low latency and high availability without manual intervention.
+Product images are fetched from Amazon S3 based on product IDs, delivering images through pre-signed URLs to the frontend.
+Secure Checkout with Stripe API:
+When users proceed to the checkout, the frontend sends payment information via a secure integration with Stripe. The Lambda function processes the payment request and, upon successful transaction, stores the order in DynamoDB and triggers a confirmation email via AWS SES.
+Post-Order Processing:
+After an order is placed, DynamoDB is updated with the order details, and the user receives an order confirmation via AWS SES (Simple Email Service). The system maintains the order history, which users can access through their account.
+Cloud Architecture: Serverless and Scalable
+
+AWS Lambda: The serverless backend architecture uses AWS Lambda for dynamic processing. Lambda functions handle product retrieval, cart updates, and order processing, ensuring cost-efficient scaling based on traffic.
+Amazon API Gateway: API Gateway is employed to expose RESTful APIs that act as the interface between the frontend and backend. This service allows secure, monitored access to the backend functions with integrated request and response handling.
+DynamoDB for Data Storage: Product details, user data, and order histories are stored using Amazon DynamoDB, a fully managed NoSQL database. DynamoDB’s auto-scaling capabilities ensure that database operations remain performant even with high traffic loads.
+S3 for Image Storage: All product images are stored in Amazon S3, offering reliable, secure storage and high-performance content delivery through pre-signed URLs, optimizing load times.
+Infrastructure Management
+
+AWS Management Console: I deployed and managed all AWS services, such as Lambda, API Gateway, S3, DynamoDB, and Cognito, using the AWS Console. This approach allowed me to directly interact with and configure services for faster iterations and hands-on control.
+GitHub & AWS CLI for CI/CD: I implemented continuous integration and deployment (CI/CD) using GitHub for version control and AWS CLI for automating infrastructure updates and deployments. This process ensures efficient workflow management, with every code change automatically deployed to AWS, making the infrastructure adaptable and responsive to changes.
+Cloud-Native Features and Optimization
+
+Serverless Architecture: The website’s architecture is entirely serverless, reducing the need for traditional server management and scaling automatically to accommodate traffic fluctuations.
+Logging and Monitoring with CloudWatch: AWS CloudWatch is integrated to track Lambda executions and API performance. This monitoring allows for insights into system performance, error tracking, and resource utilization.
+Stripe Integration for Payments: The payment system uses Stripe to securely handle transactions. This service is connected via API calls, with AWS handling order validation and post-payment processing.
+Security and User Management
+
+AWS Cognito for Authentication: AWS Cognito powers the user authentication and authorization, ensuring secure access to the e-commerce platform. It supports user registration, login, and session management while seamlessly integrating with other AWS services for data access control.
+IAM Roles & Permissions: I implemented IAM roles to securely manage access to AWS resources. This ensures that each service (Lambda, API Gateway, S3, DynamoDB) only has the permissions it needs, adhering to the principle of least privilege.
+Key Cloud Engineering Takeaways
+
+Cloud Scalability and Efficiency: By leveraging AWS Lambda and DynamoDB’s auto-scaling capabilities, the application can handle varying loads efficiently without manual intervention. This illustrates the cloud’s ability to automatically scale and manage resources.
+Serverless Cost Optimization: With AWS’s serverless offerings, operational costs are minimized by only using resources when needed. This project showcases the economic advantages of a serverless architecture, where functions are event-driven.
+Automated Deployment and Infrastructure as Code: While the AWS Management Console was used for hands-on management, I used AWS CLI to automate repetitive tasks and streamline the deployment process, further enhancing the cloud-native, infrastructure-as-code (IaC) aspect.
+This cloud-native e-commerce project reflects my ability to design, deploy, and manage serverless architectures using AWS services. The project showcases a full end-to-end flow, from user interaction to order fulfillment, while highlighting core cloud engineering practices. I used GitHub and AWS CLI for CI/CD, automated deployments, and efficient management of the infrastructure, ensuring scalability, security, and a seamless user experience.

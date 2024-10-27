@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-Native E-commerce Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: rgb(85, 85, 85);
+        }
+        .colora {
+            background:  #f4f6f8;
+        }
+        .colorb {
+            background-color:  #f4f6f8;
+        }
+        .colorc {
+            background-color: #f4f6f8;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 17vh;
+            background: #f4f6f8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 300ms ease;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+            text-underline-offset: 1rem;
+            text-decoration-color: rgb(181, 181, 181);
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .main1 {
+            background:  #f4f6f8;
+        }
+
+        .space-large {
+            height: 64px;
+        }
+
+        .blog-post {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            background: #f4f6f8;
+            justify-content: center;
+        }
+
+        .blog-post.a {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            /* background: #f4f6f8; */
+            justify-content: center;
+        }
+
+        .color {
+            background: #f4f6f8;  
+            max-width: 900px;
+        }
+        .project-img {
+            width: 100%;
+            margin-top: 80px;
+            border-radius: 1rem;
+            /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); */
+            background-color: white;
+        }
+
+        .blog-post h2 {
+            background:  #f4f6f8;
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post h3 {
+            font-size: 24px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-post h4 {
+            font-size: 18px;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post p {
+            margin-bottom: 1rem;
+        }
+        .space-large {
+            height: 64px;
+        }
+
+        .blog-post ul, .blog-post ol {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            color: #100f0f;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navcontainer {
+            background-color: #f1f1f1;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .nav-links-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 600px;
+        }
+
+        .hello {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="#" class="logo">Cloud E-commerce Store</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="colora">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                    <div class="color">
+                        <h2>Cloud-Native E-commerce Store – AWS-Powered Infrastructure</h2>
+                        <p>This project is a cloud-native e-commerce website developed to sell shoes, with a focus on applying key cloud engineering principles. It leverages the full power of AWS services to build a scalable, serverless backend while maintaining security and performance. The project was created to deepen my understanding of AWS core concepts and the cloud-native approach to infrastructure.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    <div class="colord">
+        <main class="main1">
+           <div>
+               <article class="blog-post a">
+                <div class="space-large"></div>
+
+                <h3>Architecture Diagram</h3>
+                <img src="./assets/map2.jpeg" alt="Project 1" class="project-img" />
+                <p><em>Caption: High-level architecture of the E-commerce Store</em></p>
+                <div class="space-large"></div>
+                <div class="space-large"></div>
+               </article>
+           </div>
+       </main>
+        </div>
+
+    <div class="colorb">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                    <h3>Cloud Architecture Flow: End-to-End</h3>
+
+                    <h4>User Interaction with React Frontend:</h4>
+                    <p>Users browse the website, built using React, to view product categories (Men, Women, Jordans, All), select products, and add them to the cart. The frontend communicates with backend APIs using API Gateway.</p>
+
+                    <h4>API Requests to AWS:</h4>
+                    <p>User actions (such as viewing products or adding to the cart) trigger API calls to AWS API Gateway, which acts as the central access point for all backend requests.</p>
+
+                    <h4>Serverless Processing with AWS Lambda:</h4>
+                    <p>AWS Lambda functions handle backend logic, processing requests such as retrieving product details, managing the shopping cart, and placing orders. Each Lambda function is event-driven, executing only when invoked by an API call.</p>
+
+                    <h4>Data Management with DynamoDB:</h4>
+                    <p>All product details, user data, and order histories are stored in Amazon DynamoDB. The database is automatically scaled based on the traffic, ensuring low latency and high availability without manual intervention. Product images are fetched from Amazon S3 based on product IDs, delivering images through pre-signed URLs to the frontend.</p>
+
+                    <h4>Secure Checkout with Stripe API:</h4>
+                    <p>When users proceed to the checkout, the frontend sends payment information via a secure integration with Stripe. The Lambda function processes the payment request and, upon successful transaction, stores the order in DynamoDB and triggers a confirmation email via AWS SES.</p>
+
+                    <h4>Post-Order Processing:</h4>
+                    <p>After an order is placed, DynamoDB is updated with the order details, and the user receives an order confirmation via AWS SES (Simple Email Service). The system maintains the order history, which users can access through their account.</p>
+
+                    <h3>Cloud Architecture: Serverless and Scalable</h3>
+
+                    <ul>
+                        <li><strong>AWS Lambda:</strong> The serverless backend architecture uses AWS Lambda for dynamic processing. Lambda functions handle product retrieval, cart updates, and order processing, ensuring cost-efficient scaling based on traffic.</li>
+                        <li><strong>Amazon API Gateway:</strong> API Gateway is employed to expose RESTful APIs that act as the interface between the frontend and backend. This service allows secure, monitored access to the backend functions with integrated request and response handling.</li>
+                        <li><strong>DynamoDB for Data Storage:</strong> Product details, user data, and order histories are stored using Amazon DynamoDB, a fully managed NoSQL database. DynamoDB’s auto-scaling capabilities ensure that database operations remain performant even with high traffic loads.</li>
+                        <li><strong>S3 for Image Storage:</strong> All product images are stored in Amazon S3, offering reliable, secure storage and high-performance content delivery through pre-signed URLs, optimizing load times.</li>
+                    </ul>
+
+                    <h3>Infrastructure Management</h3>
+
+                    <ul>
+                        <li><strong>AWS Management Console:</strong> I deployed and managed all AWS services, such as Lambda, API Gateway, S3, DynamoDB, and Cognito, using the AWS Console. This approach allowed me to directly interact with and configure services for faster iterations and hands-on control.</li>
+                        <li><strong>GitHub & AWS CLI for CI/CD:</strong> I implemented continuous integration and deployment (CI/CD) using GitHub for version control and AWS CLI for automating infrastructure updates and deployments. This process ensures efficient workflow management, with every code change automatically deployed to AWS, making the infrastructure adaptable and responsive to changes.</li>
+                    </ul>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <div class="colord">
+        <main class="main1">
+            <div>
+                <article class="blog-post a">
+                    <h3>Cloud-Native Features and Optimization</h3>
+
+                    <h4>Serverless Architecture:</h4>
+                    <p>The architecture of the website is fully serverless, eliminating the need for managing traditional servers and automatically adjusting to handle changes in traffic. This project highlights the cost-efficiency of a serverless approach, where functions are triggered by specific events..</p>
+                    <h4>Cloud Scalability and Efficiency:</h4>
+                    <p>By leveraging AWS Lambda and DynamoDB’s auto-scaling capabilities, the application can handle varying loads efficiently without manual intervention. This illustrates the cloud’s ability to automatically scale and manage resources.</p>
+
+                    <h4>Logging and Monitoring with CloudWatch:</h4>
+                    <p>AWS CloudWatch is integrated to track Lambda executions and API performance. This monitoring allows for insights into system performance, error tracking, and resource utilization.</p>
+
+                    <h4>Stripe Integration for Payments:</h4>
+                    <p>The payment system uses Stripe to securely handle transactions. This service is connected via API calls, with AWS handling order validation and post-payment processing.</p>
+                    <h4>Automated Deployment and Infrastructure as Code:</h4>
+                    <p>While the AWS Management Console was used for hands-on management, I used AWS CLI to automate repetitive tasks and streamline the deployment process, further enhancing the cloud-native, infrastructure-as-code (IaC) aspect.</p>
+
+                    <!-- <h3>Security and User Management</h3>
+
+                    <h4>AWS Cognito for Authentication:</h4>
+                    <p>AWS Cognito powers the user authentication and authorization, ensuring secure access to the e-commerce platform. It supports user registration, login, and session management while seamlessly integrating with other AWS services for data access control.</p>
+
+                    <h4>IAM Roles & Permissions:</h4>
+                    <p>I implemented IAM roles to securely manage access to AWS resources. This ensures that each service (Lambda, API Gateway, S3, DynamoDB) only has the permissions it needs, adhering to the principle of least privilege.</p> -->
+                </article>
+            </div>
+        </main>
+    </div>
+    <div class="colorc">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                    <h3>Security and User Management</h3>
+
+                    <h4>AWS Cognito for Authentication:</h4>
+                    <p>AWS Cognito powers the user authentication and authorization, ensuring secure access to the e-commerce platform. It supports user registration, login, and session management while seamlessly integrating with other AWS services for data access control.</p>
+
+                    <h4>IAM Roles & Permissions:</h4>
+                    <p>I implemented IAM roles to securely manage access to AWS resources. This ensures that each service (Lambda, API Gateway, S3, DynamoDB) only has the permissions it needs, adhering to the principle of least privilege.</p>
+                    <p>This cloud-native e-commerce project reflects my ability to design, deploy, and manage serverless architectures using AWS services. The project showcases a full end-to-end flow, from user interaction to order fulfillment, while highlighting core cloud engineering practices. I used GitHub and AWS CLI for CI/CD, automated deployments, and efficient management of the infrastructure, ensuring scalability, security, and a seamless user experience.</p>
+
+                </article>
+            </div>
+        </main>
+    
+
+    <footer>
+        <nav class="navcontainer">
+            <div class="nav-links-container">
+                <p class="hello">Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+                <ul class="nav-links">
+                    <li><a href="#"><img src="./assets/email.png" alt="Email icon" class="icon" /></a></li>
+                    <li><a href="#"><img src="./assets/github.png" alt="GitHub icon" class="icon" /></a></li>
+                    <li><a href="#"><img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon" /></a></li>
+                    <li><a href="#"><img src="./assets/facbook.png" alt="Facebook icon" class="icon" /></a></li>
+                    <li><a href="#"><img src="./assets/x.jpg" alt="X icon" class="icon" /></a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>

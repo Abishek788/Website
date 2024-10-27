@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Transcoding Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: rgb(85, 85, 85);
+            /* background:  #f4f6f8; */
+        }
+        .animated-text {
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+        
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .colora {
+            background:  #f4f6f8;
+        }
+        .colorb{
+            background-color: rgb(255, 255, 255);
+        }
+        .colorc {
+            background-color: #f4f6f8
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 17vh;
+            background: #f4f6f8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 300ms ease;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+            text-underline-offset: 1rem;
+            text-decoration-color: rgb(181, 181, 181);
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main1 {
+            background:  #f4f6f8;
+        }
+
+        .space-large {
+            height: 64px;
+        }
+
+        .blog-post {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            background: #f4f6f8;
+            justify-content: center;
+        }
+
+        .blog-post.a {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            /* background: #f4f6f8; */
+            justify-content: center;
+        }
+
+        .color {
+            background: #f4f6f8;  
+            max-width: 900px;
+        }
+
+        .project-img {
+            width: 140%;
+            /* margin-left: -180px; */
+            margin-top: 130px;
+            border-radius: 1rem;
+            /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); */
+            background-color: white;
+        }
+        .project-imgs {
+            margin-top: 60px;
+            margin-bottom: 60px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+        .blog-post h2 {
+            background:  #f4f6f8;
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post h3 {
+            font-size: 24px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .color1 {
+            background-color: white;
+        }
+
+        .blog-post h4 {
+            font-size: 18px;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post p {
+            margin-bottom: 1rem;
+        }
+
+        .blog-post ul, .blog-post ol {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+    background-color: #f1f1f1;
+    color: #100f0f;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.navcontainer {
+    /* max-width: 1200px; */
+    background-color: #f1f1f1;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 600px;
+}
+
+.hello {
+    font-size: 14px;
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+
+
+    </style>
+</head>
+<body >
+    
+    <header>
+        <nav>
+            <a href="#" class="logo animated-text" onclick="location.href='index.html'">Portfolio Website </a>
+            <ul class="nav-links">
+                <li><a href="#" class="animated-text">Home</a></li>
+                <li><a href="#" class="animated-text">About</a></li>
+                <li><a href="#" class="animated-text">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="colora">
+     <main class="main1">
+        <div>
+            <article class="blog-post">
+                <div class="color">
+                    <h2>Portfolio Website on AWS with CI/CD, Custom Domain, SSL, and CloudFront Distribution</h2>
+                    <img src="./assets/video.jpg" alt="Project 1" class="project-imgs" />
+                    
+            <h3>Project Overview</h3>
+            <p>This project focuses on deploying a professional, secure, and highly available portfolio website on AWS to highlight cloud engineering expertise. The website utilizes key AWS services to achieve Continuous Integration and Continuous Deployment (CI/CD), custom domain integration, SSL/HTTPS, and global content delivery. This architecture exemplifies best practices in cloud deployment, emphasizing automation, security, scalability, and performance.</p>
+
+                    <p>This document outlines the architecture of our scalable, serverless video transcoding platform built on AWS. The system efficiently handles video uploads, transcoding, and delivery while maintaining high availability and security.</p>
+                    <h3>Project Goals</h3>
+                    <ul>
+                        <li>Automate CI/CD Pipeline: Streamline code deployments through GitHub and AWS CodeBuild.</li>
+                        <li>Interactive Contact Page: API-based serverless contact form integration using Lambda, API Gateway, and DynamoDB.</li>
+                        <li>Custom Domain and DNS Management: Domain hosted and managed through AWS Route 53.</li>
+                        <li>Enhanced Security with HTTPS: SSL encryption using AWS Certificate Manager.</li>
+                        <li>Global Distribution and Caching: Content delivery optimized via AWS CloudFront.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+     </div>
+     <div class="colord">
+        <main class="main1">
+           <div>
+               <article class="blog-post a">
+                <div class="space-large"></div>
+
+                <h3>Architecture Diagram</h3>
+                <img src="./assets/portfolio.jpeg" alt="Project 1" class="project-img" />
+                <p><em>Caption: High-level architecture of the Portfolio Website</em></p>
+                <div class="space-large"></div>
+                <div class="space-large"></div>
+               </article>
+           </div>
+       </main>
+        </div>
+     <div class="colorc">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                <!-- <div class="space-large"></div>
+
+                <h3>Architecture Diagram</h3>
+                <img src="./assets/map.png" alt="Project 1" class="project-img" />
+                <p><em>Caption: High-level architecture of the video transcoding platform</em></p>
+                <div class="space-large"></div>
+                <div class="space-large"></div> -->
+
+                <h3>Key Components and Implementation</h3>
+
+                <h4>1. Code Repository and CI/CD Pipeline</h4>
+                <p>GitHub serves as the code repository, with AWS CodeBuild automating deployment by building and deploying changes on each commit to the main branch. The `buildspec.yml` file defines build commands, ensuring a seamless deployment process.</p>
+    
+                <h4>2. Contact Page with API Integration</h4>
+                <p>The interactive contact form enables users to submit their details (name, email, message) securely. API Gateway serves as the RESTful API endpoint, triggering a Lambda function that processes and stores the data in DynamoDB for persistence and retrieval.</p>
+    
+                <h4>3. S3 as Static Website Hosting</h4>
+                <p>Configured for static hosting with public access enabled to serve HTML, CSS, and JavaScript files. Versioning is enabled for data backup and recoverability.</p>
+    
+                <h4>4. Custom Domain Setup with Route 53</h4>
+                <p>The custom domain is managed with Route 53, with an alias record pointing to CloudFront for efficient routing and DNS management.</p>
+    
+                <h4>5. SSL/HTTPS with AWS Certificate Manager (ACM)</h4>
+                <p>SSL certificates issued by ACM, validated through DNS, and applied on CloudFront, ensure secure HTTPS traffic for enhanced data protection.</p>
+    
+                <h4>6. Global Content Delivery with CloudFront</h4>
+                <p>CloudFront distributes content worldwide, using caching strategies for faster load times and Origin Access Identity (OAI) to secure S3 access.</p>
+
+                <h3>Challenges and Solutions</h3>
+            <ul>
+                <li>Automating deployment from GitHub to S3: Solved with AWS CodeBuild.</li>
+                <li>Securing S3 content while using CloudFront: Implemented OAI for secure access.</li>
+                <li>Managing SSL certificate renewal: Automated with ACM for uninterrupted HTTPS.</li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>This portfolio project demonstrates expertise in deploying secure, scalable, and automated infrastructure on AWS, showcasing proficiency in S3, CloudFront, Route 53, Lambda, DynamoDB, and CodeBuild for cloud-native deployments. This site serves as a testament to foundational cloud engineering skills.</p>
+            </article>
+        </div>
+    
+
+   </main>
+   <footer>
+    <nav class="navcontainer">
+      <div class="nav-links-container">
+        <p class="hello animated-text">Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+        <ul class="nav-links ">
+          
+          <li><a href="#experience"><img
+            src="./assets/email.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#experience"><img
+            src="./assets/github.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><img
+            src="./assets/linkedin.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/facbook.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/x.jpg"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          
+        </ul>
+        
+      </div>
+    </nav>
+    
+  </footer>
+    </div>
+    
+</body>
