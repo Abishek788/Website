@@ -41,3 +41,12 @@ Cloud Scalability and Efficiency: By leveraging AWS Lambda and DynamoDB’s auto
 Serverless Cost Optimization: With AWS’s serverless offerings, operational costs are minimized by only using resources when needed. This project showcases the economic advantages of a serverless architecture, where functions are event-driven.
 Automated Deployment and Infrastructure as Code: While the AWS Management Console was used for hands-on management, I used AWS CLI to automate repetitive tasks and streamline the deployment process, further enhancing the cloud-native, infrastructure-as-code (IaC) aspect.
 This cloud-native e-commerce project reflects my ability to design, deploy, and manage serverless architectures using AWS services. The project showcases a full end-to-end flow, from user interaction to order fulfillment, while highlighting core cloud engineering practices. I used GitHub and AWS CLI for CI/CD, automated deployments, and efficient management of the infrastructure, ensuring scalability, security, and a seamless user experience.
+
+
+
+git init
+git add .
+git commit -m "second commit"
+git branch -M main
+git remote add origin https://github.com/Abishek788/Website.git
+git push -u origin main
