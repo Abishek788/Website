@@ -276,8 +276,16 @@
                     <h2 >Video Transcoding Platform Architecture</h2>
                     <img src="./assets/video.jpg" alt="Project 1" class="project-imgs" />
 
-                    <h3>Overview</h3>
-                    <p>This document outlines the architecture of our scalable, serverless video transcoding platform built on AWS. The system efficiently handles video uploads, transcoding, and delivery while maintaining high availability and security.</p>
+                    <h3>Project Overview</h3>
+                    <p>This project showcases a cloud-native, serverless video transcoding platform built on AWS. The system is designed to handle video uploads, transcoding, and delivery efficiently while ensuring high availability, scalability, and security. Leveraging AWS services, this architecture emphasizes automation, performance, and user interactivity with real-time analytics.</p>
+                    <p>This project is the culmination of extensive practice in Infrastructure as Code (IaC) using AWS CloudFormation. I have completed multiple small projects, watched expert videos by instructors like Stephane Maarek, and worked through various labs and tutorials to build my CloudFormation skills. This high-level project allowed me to expand my expertise and integrate all my cloud skills into a sophisticated architecture.</p>
+                    <ol>
+                        <li><strong>Automated Video Upload and Transcoding:</strong> Streamline video processing using ECS on Fargate along with Docker, enabling the processing of videos into multiple resolutions.</li>
+                        <li><strong>Seamless User Authentication:</strong> Secure access for users by integrating AWS Cognito, allowing them to browse and select videos securely.</li>
+                        <li><strong>Real-Time User Analytics:</strong> Capture key user interactions such as play and pause actions through AWS Kinesis, providing insightful metrics.</li>
+                        <li><strong>Secure and Efficient Content Delivery:</strong> Leverage AWS CloudFront and Route 53 for low-latency, global streaming of video content.</li>
+                        <li><strong>Infrastructure as Code (IaC):</strong> Use AWS CloudFormation to manage infrastructure consistently and in a repeatable way, ensuring efficient deployment and scalability.</li>
+                      </ol>
                 </div>
             </article>
         </div>
@@ -535,8 +543,19 @@ Resources:
                     <li>DynamoDB global tables for multi-region availability</li>
                     <li>Regular backups of critical data</li>
                 </ul>
+                <h3>Challenges and Solutions</h3>
+                <ol>
+                    <li><strong>CloudFormation Implementation:</strong> The most challenging part of the project was implementing CloudFormation, as it was completely new to me. Automating complex infrastructure like VPC, ECS, and ALB was presenting a steep learning curve.</li>
+                    <li><strong>Video Transcoding Complexity:</strong> Implementing the video transcoding pipeline with Docker, ECS tasks, and Application Load Balancer (ALB) was also being quite challenging. Pinning all these components through CloudFormation was being particularly tough, requiring extensive testing and iteration.</li>
+                    <li><strong>Handling High Traffic and Scalability:</strong> ECS task auto-scaling and CloudFront caching were addressing demand fluctuations.</li>
+                    <li><strong>Managing Secure Access to S3 Buckets:</strong> Implementing Origin Access Identity (OAI) was restricting S3 bucket access to CloudFront only.</li>
+                    <li><strong>Efficient Real-Time Analytics:</strong> Using AWS Kinesis was ingesting and analyzing user interaction data for actionable insights.</li>
+                  </ol>
+                  
+                  
+                  
 
-                <p>This architecture provides a scalable, secure, and efficient solution for our video platform, leveraging AWS services to handle complex video processing and delivery workflows. The use of advanced CloudFormation features ensures our infrastructure is well-organized, consistent, and easily manageable across multiple environments.</p>
+                <p>This video transcoding platform showcases expertise in developing a robust, scalable, and secure solution using AWS cloud services. It represents the culmination of my journey in mastering Infrastructure as Code (IaC), after completing numerous smaller projects and gaining insights from experts like Stephane Maarek. Key services include ECS on Fargate, Lambda, DynamoDB, CloudFront, S3, Route 53, and Kinesis—all orchestrated with CloudFormation for infrastructure automation. The project emphasizes scalability, serverless computing, and optimal user experience, serving as a testament to advanced cloud engineering skills.</p>
                </div>
                
            </article>
