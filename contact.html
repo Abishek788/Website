@@ -58,27 +58,39 @@
         </div>
       </nav>
     </footer>
-
     <script>
       document.getElementById('contactForm').addEventListener('submit', async function (event) {
+        console.log('Form submission triggered');
         event.preventDefault();
+        console.log('Form submission prevented');
+        
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
-
+    
+        console.log('Form values:', { name, email, message });
+    
         try {
-          const response = await fetch('https://example.com/api/contact', {
+          console.log('Sending data to API...');
+          const response = await fetch('https://09yuzyigp4.execute-api.us-east-1.amazonaws.com/dev', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name, email, message }),
+            // Convert the body to a JSON string and escape quotes to match the expected Lambda structure
+            body: JSON.stringify({
+              httpMethod: "POST", // Including the method if Lambda is dependent on it
+              body: JSON.stringify({ name, email, message }),
+            }),
           });
-
+    
           if (response.ok) {
+            console.log('Response OK');
             alert('Thank you for contacting us! We will get back to you soon.');
             document.getElementById('contactForm').reset();
+            console.log('Form reset');
           } else {
+            console.log('Response not OK', response.status, response.statusText);
             alert('There was an error. Please try again later.');
           }
         } catch (error) {
@@ -87,5 +99,6 @@
         }
       });
     </script>
+    
   </body>
 </html>
