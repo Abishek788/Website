@@ -462,7 +462,7 @@ section {
 }
 
 .skills-container {
-  padding: 20px;
+  padding: 7px;
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 5fr));
   gap: 5px;
