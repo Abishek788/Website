@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Performance Distributed Backend Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            color: rgb(85, 85, 85);
+        }
+        .animated-text {
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+        }
+        
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        .colora {
+            background:  #f4f6f8;
+        }
+        .colorb{
+            background-color: rgb(255, 255, 255);
+        }
+        .colorc {
+            background-color: #f4f6f8
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 17vh;
+            background: #f4f6f8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-size: 1.5rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            transition: all 300ms ease;
+        }
+
+        a:hover {
+            color: grey;
+            text-decoration: underline;
+            text-underline-offset: 1rem;
+            text-decoration-color: rgb(181, 181, 161);
+        }
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .main1 {
+            background:  #f4f6f8;
+        }
+
+        .space-large {
+            height: 64px;
+        }
+
+        .blog-post {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            background: #f4f6f8;
+            justify-content: center;
+        }
+
+        .blog-post.a {
+            background: white;
+            border-color: rgb(163, 163, 163);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+            justify-content: center;
+        }
+
+        .color {
+            background: #f4f6f8;  
+            max-width: 900px;
+        }
+
+        .project-img {
+            width: 100%;
+            margin-top: 80px;
+            border-radius: 1rem;
+            background-color: white;
+        }
+        .project-imgs {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .blog-post h2 {
+            background:  #f4f6f8;
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post h3 {
+            font-size: 24px;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .color1 {
+            background-color: white;
+        }
+
+        .blog-post h4 {
+            font-size: 18px;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post p {
+            margin-bottom: 1rem;
+        }
+
+        .blog-post ul, .blog-post ol {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            background-color: #f1f1f1;
+            color: #100f0f;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .navcontainer {
+            background-color: #f1f1f1;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .nav-links-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 600px;
+        }
+
+        .hello {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="#" class="logo animated-text" onclick="location.href='index.html'">ML Infrastructure Engineer (Academic Project)</a>
+            <ul class="nav-links">
+                <li><a href="#" class="animated-text">Home</a></li>
+                <li><a href="#" class="animated-text">About</a></li>
+                <li><a href="#" class="animated-text">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="colora">
+     <main class="main1">
+        <div>
+            <article class="blog-post">
+                <div class="color">
+                    
+                    <h2>Building a Resilient, High-Performance Python Backend: Scaling to 1K+ RPS with Kubernetes and Chaos Engineering</h2>
+                    <!-- <img src="./assets/backend_infrastructure.jpg" alt="Distributed Backend Architecture Diagram" class="project-imgs" /> -->
+
+                    <h3>Abstract</h3>
+                    <p>This article details the design, implementation, and rigorous validation of a distributed, auto-scaling backend infrastructure capable of handling over 1,000 Requests Per Second (RPS). Leveraging Python (FastAPI), Docker, and Google Kubernetes Engine (GKE), we focused on building resilience through Chaos Engineering, successfully reducing the Mean Time To Recovery (MTTR) from an estimated 30 minutes to a validated 8 seconds. We conclude with the implementation of advanced observability via Prometheus, Grafana, and Distributed Tracing (Jaeger).</p>
+                    
+                    <h3>1. Project Goals and Technology Stack</h3>
+                    <p>The objective was to build a highly available, scalable web service and prove its reliability under duress.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+     </div>
+     <div class="colord">
+        <main class="main1">
+           <div>
+               <article class="blog-post a">
+                <div class="space-large"></div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Technology Used</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>High Performance & APIs</b></td>
+                            <td>Python (FastAPI) & Uvicorn/Gunicorn</td>
+                            <td>FastAPI offers high speed with asynchronous processing, essential for 1,000+ RPS.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Containerization</b></td>
+                            <td>Docker</td>
+                            <td>Ensures consistent environments from local development to production on GKE.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Auto-Scaling & Orchestration</b></td>
+                            <td>Google Kubernetes Engine (GKE)</td>
+                            <td>Provides native Horizontal Pod Autoscaling (HPA) and robust cluster management.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Resilience & Validation</b></td>
+                            <td>Chaos Mesh (Chaos Engineering)</td>
+                            <td>Intentionally injects failures to validate system recovery time.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Observability</b></td>
+                            <td>Prometheus, Grafana, Jaeger</td>
+                            <td>Provides real-time metrics, visualization, and distributed tracing for fast debugging.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="space-large"></div>
+                <div class="space-large"></div>
+               </article>
+           </div>
+       </main>
+        </div>
+     <div class="colorc">
+        <main class="main1">
+            <div>
+                <article class="blog-post">
+                
+                <h3>2. Phase I: Core Deployment and Auto-Scaling</h3>
+                <p>We began by containerizing the Python service and deploying the foundation for scalability.</p>
+
+                <h4>A. Python Service and Dockerization</h4>
+                <p><b>What I Did:</b> Built a lightweight FastAPI service with a <code>/api/v1/status</code> endpoint and a <code>/healthz</code> endpoint (critical for Kubernetes probes). The application was packaged into a Docker image using a multi-process CMD (gunicorn with uvicorn workers) for optimized concurrency.</p>
+                
+                <p><b>The Problem Faced:</b> Initial deployments failed with a <code>CrashLoopBackOff</code> error.</p>
+                
+                <p><b>Solution & Key Takeaway:</b> The issue was traced to the Dockerfile's CMD line, which could not find the gunicorn executable in the container's path.</p>
+                <p style="text-align: center; font-style: italic;">Error: exec: "gunicorn": executable file not found in $PATH</p>
+                
+                <p><b>Fix:</b> The CMD was changed from <code>["gunicorn", ...]</code> to <code>["python", "-m", "gunicorn", ...]</code> to explicitly run the module via the Python interpreter, resolving the issue.</p>
+
+                <h4>B. Kubernetes and Auto-Scaling Configuration</h4>
+                <p><b>What I Did:</b> Deployed the service to GKE using three key manifests:</p>
+                <ul>
+                    <li><b>Deployment:</b> Defined minimum replicas (minReplicas: 3) and set resource limits/requests (cpu: 250m requested) for stable scheduling. Included Liveness and Readiness Probes pointing to <code>/healthz</code>.</li>
+                    <li><b>Service (LoadBalancer):</b> Exposed the service externally using a GCP Load Balancer.</li>
+                    <li><b>HPA:</b> Configured the Horizontal Pod Autoscaler to scale between 3 and 20 replicas based on 60% average CPU utilization.</li>
+                </ul>
+
+                <h3>3. Phase II: Resilience and Chaos Engineering</h3>
+                <p>The objective was to prove the system's ability to recover from failure and validate the MTTR < 3 minute goal.</p>
+
+                <h4>A. Pod Failure Test (MTTR Validation)</h4>
+                <p><b>Why I Did It:</b> To validate Kubernetes' self-healing capability and measure recovery time from a process crash.</p>
+                
+                <p><b>What I Did:</b> Installed Chaos Mesh and created a PodChaos experiment set to terminate a random backend pod every 60 seconds.</p>
+                
+                <p><b>The Problem Faced:</b> Initial attempts to apply the YAML failed with resource mapping not found errors, requiring iteration through different API versions (v1alpha1, v1alpha9, v1beta1) until the correct chaos-mesh.org/v1 API was found to be compatible with the installed Helm chart.</p>
+                
+                <p><b>Result (MTTR Proof):</b> By running <code>kubectl get pods -w</code> and timing the recovery, the system demonstrated an average MTTR of <b>8 seconds</b>. This confirmed the system's ability to heal almost instantly, far exceeding the project goal.</p>
+
+                <h4>B. Network Failure Test (Latency Resilience)</h4>
+                <p><b>Why I Did It:</b> To simulate a real-world scenario where a downstream dependency (like a database or another microservice) is slow, preventing cascading timeouts.</p>
+                
+                <p><b>What I Did:</b> Deployed a NetworkChaos experiment to inject 500ms of latency into all application traffic for one minute.</p>
+                
+                <p><b>Result:</b> The application successfully handled the delay without crashing or throwing HTTP errors, demonstrating resilience to degraded network conditions.</p>
+
+                <img src="./assets/chaos_mesh_mttr.png" alt="Chaos Mesh MTTR validation diagram" class="project-img" />
+                <p><em>Caption: The self-healing process validated by the Pod Kill experiment, resulting in an 8-second MTTR.</em></p>
+
+                <h3>4. Phase III: Observability and Performance Validation</h3>
+                <p>To prove the 1,000+ RPS scaling and ensure fast detection, we integrated monitoring and tracing.</p>
+
+                <h4>A. Metrics and Scaling Validation (Prometheus & Grafana)</h4>
+                <p><b>What I Did:</b> Installed the kube-prometheus-stack via Helm, which automatically collects metrics from Kubernetes components and applications. Created a Grafana Dashboard to monitor two critical metrics: CPU Utilization and Deployment Replica Count.</p>
+                
+                <p><b>Load Test and Result:</b> Using Locust, the load was increased until the CPU Utilization exceeded 60%.</p>
+                
+                <p><b>Validation:</b> The Replica Count on the dashboard immediately increased from 3 to 4 (and beyond, with continued load), confirming the HPA mechanism is fully functional and ready to handle over 1,000+ RPS.</p>
+
+                <h4>B. Distributed Tracing (Jaeger)</h4>
+                <p><b>Why I Did It:</b> To rapidly pinpoint the source of latency (e.g., a slow function or database call) in a distributed environment, thereby completing the goal of fast incident investigation.</p>
+                
+                <p><b>What I Did:</b> Installed the Jaeger tracing backend using the correct Helm configuration (allInOne mode). Instrument the FastAPI service using the OpenTelemetry SDK, ensuring traces were exported to the new Jaeger Collector service.</p>
+                
+                <p><b>The Problem Faced:</b> The Jaeger Helm installation repeatedly failed due to conflicts (services already exists, name still in use).</p>
+                
+                <p><b>Fix:</b> These conflicts were resolved by manually deleting lingering Kubernetes Service objects and installing the chart with a unique name (jaeger-finals).</p>
+
+                <h4>C. SLI/SLO Alerting</h4>
+                <p><b>What I Did:</b> Defined a formal Service Level Objective (SLO) in Grafana: <b>99%</b> of requests must complete in less than <b>500ms</b>.</p>
+                
+                <p><b>Implementation:</b> Configured a Prometheus Alert Rule that watches the SLI metric (ratio of fast requests to total requests) and fires a Fast Burn Rate alert if the success rate drops below 99% for 5 continuous minutes.</p>
+            </article>
+        </div>
+    </main>
+</div>
+
+<div class="colorb">
+    <main class="main1">
+        <div>
+            <article class="blog-post a">
+                <div class="color1">
+                    <h3>Appendix: Key Configuration Snippets</h3>
+                    <p>Core configuration files that enabled auto-scaling and resilience:</p>
+
+                    <h4>Horizontal Pod Autoscaler (HPA)</h4>
+                    <p>The core scaling mechanism:</p>
+                    <pre><code>apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fast-backend-hpa
+spec:
+    scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: fast-backend-deployment
+    minReplicas: 3
+    maxReplicas: 20
+    metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60</code></pre>
+
+                    <h4>PodChaos Experiment (MTTR Test)</h4>
+                    <p>The resilience validation test (using the final working v1 API):</p>
+                    <pre><code>apiVersion: chaos-mesh.org/v1
+kind: PodChaos
+metadata:
+    name: backend-pod-kill-test
+    namespace: default
+spec:
+    action: pod-kill
+    mode: one
+    selector:
+      labelSelectors:
+          app: fast-backend
+    duration: "1m"</code></pre>
+
+                    <h4>Deployment Resource Limits (Essential for HPA)</h4>
+                    <p>Defining requests/limits ensures fair scheduling and enables metric calculation for the HPA.</p>
+                    <pre><code># Deployment.yaml Snippet
+resources:
+    requests:
+      cpu: "250m" 
+      memory: "256Mi" 
+    limits:
+      cpu: "500m" 
+      memory: "512Mi"</code></pre>
+                </div>
+            </article>
+        </div>
+    </main>
+</div>
+
+<div class="colora">
+    <main class="main1">
+       <div>
+           <article class="blog-post">
+               <div class="color">
+                <h3>5. Conclusion</h3>
+                <p>By integrating Python, Kubernetes, and a robust monitoring stack, we successfully deployed a backend built for scale. The project validated the ability to handle high traffic and, through intentional failure testing, proved the system's inherent resilience with an observed MTTR of just 8 seconds, fulfilling all initial requirements and establishing a robust, production-ready foundation.</p>
+               </div>
+           </article>
+       </div>
+   </main>
+   <div class="colorb">
+    <main class="main1">
+        <div>
+            <article class="blog-post a">
+                <div class="color1">
+                    <h3>Visual Proofs and Evidence</h3>
+                    <p>Below are the screenshots and diagrams demonstrating the successful implementation and validation of the system:</p>
+                    
+                    <!-- <h4>System Architecture Overview</h4>
+                    <img src="./assets/system-architecture.png" alt="Complete System Architecture Diagram" class="project-img" />
+                    <p><em>Complete architecture showing FastAPI, Docker, GKE, and monitoring stack integration.</em></p>
+                     -->
+                    <h4>Auto-Scaling in Action</h4>
+                    <img src="./assets/hpa-scaling.png" alt="HPA Scaling Metrics" class="project-img" />
+                    <p><em>Showing CPU utilization triggering HPA from 3 to 4+ replicas during load testing.</em></p>
+                    
+                    <h4>MTTR Validation (8 Seconds Recovery)</h4>
+                    <img src="./assets/mttr-proof.png" alt="MTTR Recovery Timeline" class="project-img" />
+                    <p><em>Kubernetes pod recovery timeline showing 8-second MTTR after Chaos Mesh pod kill experiment.</em></p>
+                    
+                    <h4>Network Testing</h4>
+                    <img src="./assets/chaos-results.png" alt="Chaos Mesh Experiment Results" class="project-img" />
+                    <p><em>Network latency injection test results showing system resilience under 500ms delay.</em></p>
+                    
+                    <h4>Distributed Tracing</h4>
+                    <img src="./assets/jaeger-traces.png" alt="Jaeger Distributed Traces" class="project-img" />
+                    <p><em>Jaeger UI showing request traces across services for performance debugging.</em></p>
+                    
+                    <h4>Monitoring Dashboard</h4>
+                    <img src="./assets/prometheus-grafana.png" alt="Prometheus and Grafana Dashboard" class="project-img" />
+                    <p><em>Real-time monitoring dashboard displaying key performance metrics and alerts.</em></p>
+                </div>
+            </article>
+        </div>
+    </main>
+   <footer>
+    <nav class="navcontainer">
+      <div class="nav-links-container">
+        <p class="hello animated-text">Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
+        <ul class="nav-links ">
+          <li><a href="#experience"><img
+            src="./assets/email.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#experience"><img
+            src="./assets/github.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><img
+            src="./assets/linkedin.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/facbook.png"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+          <li><a href="#contact"><img
+            src="./assets/x.jpg"
+            alt="Experience icon"
+            class="icon"
+          /></a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+    </div>
+</body>
+</html>
